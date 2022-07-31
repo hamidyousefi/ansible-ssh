@@ -1,0 +1,40 @@
+Include                     /etc/ssh/sshd_config.d/*.conf
+
+Port                        {{ sshd_conf.Port }}
+ListenAddress               {{ sshd_conf.ListenAddress }}
+
+SyslogFacility              {{ sshd_conf.SyslogFacility }}
+LogLevel                    {{ sshd_conf.LogLevel }}
+
+LoginGraceTime              {{ sshd_conf.LoginGraceTime }}
+PermitRootLogin             {{ sshd_conf.PermitRootLogin }}
+StrictModes                 {{ sshd_conf.StrictModes }}
+MaxAuthTries                {{ sshd_conf.MaxAuthTries }}
+MaxSessions                 {{ sshd_conf.MaxSessions }}
+
+PubkeyAuthentication        {{ sshd_conf.PubkeyAuthentication }}
+AuthorizedKeysFile          {{ sshd_conf.AuthorizedKeysFile }}
+
+PasswordAuthentication      {{ sshd_conf.PasswordAuthentication }}
+PermitEmptyPasswords        {{ sshd_conf.PermitEmptyPasswords }}
+
+UsePAM                      {{ sshd_conf.UsePAM }}
+
+AllowAgentForwarding        {{ sshd_conf.AllowAgentForwarding }}
+AllowTcpForwarding          {{ sshd_conf.AllowTcpForwarding }}
+
+GatewayPorts                {{ sshd_conf.GatewayPorts }}
+X11Forwarding               {{ sshd_conf.X11Forwarding }}
+PrintMotd                   {{ sshd_conf.PrintMotd }}
+PrintLastLog                {{ sshd_conf.PrintLastLog }}
+TCPKeepAlive                {{ sshd_conf.TCPKeepAlive }}
+
+UseDNS                      {{ sshd_conf.UseDNS }}
+PidFile                     /var/run/sshd.pid
+
+PermitTunnel                {{ sshd_conf.PermitTunnel }}
+
+AcceptEnv                   LANG LC_*
+Subsystem                   sftp /usr/lib/openssh/sftp-server
+
+ClientAliveInterval         120

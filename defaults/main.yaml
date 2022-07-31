@@ -1,0 +1,26 @@
+---
+sshd_conf:
+  Port: 21
+  ListenAddress: "0.0.0.0"
+  SyslogFacility: AUTH
+  LogLevel: INFO
+  LoginGraceTime: 2m
+  PermitRootLogin: "no"
+  StrictModes: "yes"
+  MaxAuthTries: 3
+  MaxSessions: 10
+  PubkeyAuthentication: "yes"
+  AuthorizedKeysFile: .ssh/authorized_keys
+  PasswordAuthentication: "no"
+  PermitEmptyPasswords: "no"
+  UsePAM: "yes"
+  AllowAgentForwarding: "no"
+  AllowTcpForwarding: "no"
+  GatewayPorts: "no"
+  X11Forwarding: "no"
+  PrintMotd: "no"
+  PrintLastLog: "yes"
+  TCPKeepAlive: "yes"
+  UseDNS: "no"
+  PermitTunnel: "no"
+  ClientAliveInterval: 120
