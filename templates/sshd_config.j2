@@ -1,6 +1,10 @@
 Include                     /etc/ssh/sshd_config.d/*.conf
 
+{% if isinstance(sshd_conf.Port, str) %}
 Port                        {{ sshd_conf.Port }}
+{% else %}{% for port in sshd_conf.Port %}
+Port                        {{ port }}
+{% endfor %}{% endif %}
 ListenAddress               {{ sshd_conf.ListenAddress }}
 
 SyslogFacility              {{ sshd_conf.SyslogFacility }}
