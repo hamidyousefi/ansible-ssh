@@ -1,6 +1,6 @@
 Include                     /etc/ssh/sshd_config.d/*.conf
 
-{% if sshd_conf is string %}
+{% if sshd_conf.Port is string %}
 Port                        {{ sshd_conf.Port }}
 {% else %}{% for port in sshd_conf.Port %}
 Port                        {{ port }}

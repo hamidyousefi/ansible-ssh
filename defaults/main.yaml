@@ -1,11 +1,11 @@
 ---
 sshd_conf:
-  Port: 21
+  Port: 22
   ListenAddress: "0.0.0.0"
   SyslogFacility: AUTH
   LogLevel: INFO
   LoginGraceTime: 2m
-  PermitRootLogin: "no"
+  PermitRootLogin: "{% if ansible_user == 'root' %}yes{% else %}no{% endif %}"
   StrictModes: "yes"
   MaxAuthTries: 3
   MaxSessions: 10
